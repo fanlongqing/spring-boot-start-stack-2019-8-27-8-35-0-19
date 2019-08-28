@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created on 18/08/2017.
  */
-@RestController
-@RequestMapping("/hello")
+@RestController//暴露出办事处所有的功能
+@RequestMapping("/hello")//具体模块
 public class HelloResource {
 
-    @GetMapping(path = "/{userName}")
+    @GetMapping(path = "/{userName}")//获取URL中的参数
     public ResponseEntity<String> getAll(@PathVariable String userName) {
 
         return ResponseEntity.ok("Hello:" + userName);
     }
+    @GetMapping(path = "/{userName}/123")//获取URL中的参数
+    public ResponseEntity<String> setAll(@PathVariable String userName) {
 
-
+        return ResponseEntity.ok("Hello:" + userName);
+    }
 }
